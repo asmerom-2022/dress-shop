@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "451041953313",
+    "project_id": "dress-shop-f3293",
+    "storage_bucket": "dress-shop-f3293.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451041953313:android:8d400c058f8ac0ddc58560",
+        "android_client_info": {
+          "package_name": "com.example.dress_shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451041953313-i7ifgg55ii0m4d7ipjsnse8f2nusllui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXXLu0mMsgAMClzgFmJqPVGR7vEouUTIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451041953313-i7ifgg55ii0m4d7ipjsnse8f2nusllui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
