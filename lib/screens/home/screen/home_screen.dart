@@ -1,3 +1,4 @@
+import 'package:dress_shop/screens/details/components/favorite_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dress_shop/constants/constants.dart';
@@ -55,7 +56,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CartScreen(),
+                builder: (context) => FavScreen(),
               )),
         ),
         const SizedBox(width: kDefaultPaddin / 2)

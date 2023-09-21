@@ -1,3 +1,4 @@
+import 'package:dress_shop/screens/details/components/details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -45,6 +46,13 @@ class CartScreen extends ConsumerWidget {
               },
             ),
             leading: Image.network(cartItem.image!),
+            // onTap: () => Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //       builder: (context) => DetailsScreen(
+            //         product: cartItem,
+            //       ),
+            //     )),
           );
         },
       ),

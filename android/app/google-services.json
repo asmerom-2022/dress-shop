@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "451041953313-pl466dca4ednb3m0ndm360dqo7085mq4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dress_shop",
+            "certificate_hash": "89cbb991983a630cc5a7bea4647a22e515a5622c"
+          }
+        },
+        {
           "client_id": "451041953313-i7ifgg55ii0m4d7ipjsnse8f2nusllui.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "451041953313-i7ifgg55ii0m4d7ipjsnse8f2nusllui.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "451041953313-gjc8m16v450qu06626ij7sg0lcu7nq4g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.dressShop.RunnerTests"
+              }
             }
           ]
         }

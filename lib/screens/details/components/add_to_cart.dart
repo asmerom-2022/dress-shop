@@ -1,5 +1,12 @@
+import 'dart:developer';
+
+import 'package:dress_shop/screens/details/components/controller.dart';
+import 'package:dress_shop/screens/details/components/stripe_payment/payment_manager.dart';
+import 'package:dress_shop/screens/details/components/stripe_payment/paypalpayment.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_paypal/flutter_paypal.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get.dart';
 
 import '../../../constants/constants.dart';
 import '../../../models/cart.dart';
@@ -22,6 +29,7 @@ class _AddToCartState extends ConsumerState<AddToCart> {
 
   @override
   Widget build(BuildContext context) {
+    final PaymentController _paymentController = Get.put(PaymentController());
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin),
       child: Column(
@@ -59,7 +67,12 @@ class _AddToCartState extends ConsumerState<AddToCart> {
                 child: SizedBox(
                   height: 50,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showCustomSnackbar(context);
+                      // if (_paymentController.isPaymentSuccess == true) {
+                      //   showSnackbar(context);
+                      // }
+                    },
                     child: Text(
                       "Buy  Now".toUpperCase(),
                       style: const TextStyle(
@@ -159,4 +172,75 @@ class _AddToCartState extends ConsumerState<AddToCart> {
       ),
     );
   }
+
+  void showCustomSnackbar(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        backgroundColor: bgscaffold,
+        showCloseIcon: true,
+        content: Column(
+          children: [
+            ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.blue),
+                ),
+                onPressed: () {
+                  final int amount = widget.product.price!;
+                  final int quantity = numOfItems;
+                  final String name = widget.product.title!;
+                  final String currency = 'USD';
+                  final int price = amount * quantity;
+                  PaymentManager.makePayment(price, currency, name, quantity);
+                },
+                child: Text(
+                  'Stripe payment',
+                  style: TextStyle(color: Colors.black),
+                )),
+            SizedBox(height: 16),
+            ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.blue),
+                ),
+                onPressed: () {
+                  final double price = widget.product.price!.toDouble();
+                  final int quantity = numOfItems;
+                  final String name = widget.product.title!;
+                  final String currency = 'USD';
+                  final double amount = price * quantity;
+                  print('amount is $amount');
+                  print('quantity is $quantity');
+                  // using this for paypal process
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          paymentprocess(amount, quantity, name, currency),
+                    ),
+                  );
+                },
+                child: Text(
+                  'paypal payment',
+                  style: TextStyle(color: Colors.black),
+                )),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+void showSnackbar(BuildContext context) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text('you paid succeefully. Thank you'),
+      action: SnackBarAction(
+        label: 'Yes',
+        onPressed: () {
+          // Navigate to the first screen when the "Yes" button is pressed
+          Navigator.of(context).pop();
+        },
+      ),
+    ),
+  );
 }

@@ -66,6 +66,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '451041953313',
     projectId: 'dress-shop-f3293',
     storageBucket: 'dress-shop-f3293.appspot.com',
+    androidClientId: '451041953313-pl466dca4ednb3m0ndm360dqo7085mq4.apps.googleusercontent.com',
     iosClientId: '451041953313-kf8ns0u1lubbaraoof2t30u97fk29kr3.apps.googleusercontent.com',
     iosBundleId: 'com.example.dressShop',
   );
@@ -76,6 +77,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '451041953313',
     projectId: 'dress-shop-f3293',
     storageBucket: 'dress-shop-f3293.appspot.com',
+    androidClientId: '451041953313-pl466dca4ednb3m0ndm360dqo7085mq4.apps.googleusercontent.com',
     iosClientId: '451041953313-gjc8m16v450qu06626ij7sg0lcu7nq4g.apps.googleusercontent.com',
     iosBundleId: 'com.example.dressShop.RunnerTests',
   );

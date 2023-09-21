@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'dart:io';
+import 'dart:typed_data';
 import 'package:dress_shop/screens/details/components/product_title_with_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -78,7 +79,7 @@ class _AddproductState extends ConsumerState<AddProductPage> {
                           height: 200, width: 400, fit: BoxFit.cover)
                       : Container(
                           height: 200,
-                          width: 400,
+                          // width: 400,
                           decoration: BoxDecoration(
                             border: Border.all(
                               color: Colors.grey,
@@ -141,6 +142,7 @@ class _AddproductState extends ConsumerState<AddProductPage> {
                       border: OutlineInputBorder(),
                       hintText: 'Enter price',
                     ),
+                    keyboardType: TextInputType.numberWithOptions(),
                   ),
                   const SizedBox(height: 16),
                   TextFormField(
@@ -150,6 +152,7 @@ class _AddproductState extends ConsumerState<AddProductPage> {
                       border: OutlineInputBorder(),
                       hintText: 'Enter size',
                     ),
+                    keyboardType: TextInputType.numberWithOptions(),
                   ),
                   const SizedBox(height: 16),
                   TextFormField(
@@ -159,6 +162,7 @@ class _AddproductState extends ConsumerState<AddProductPage> {
                       border: OutlineInputBorder(),
                       hintText: 'Enter quantity',
                     ),
+                    keyboardType: TextInputType.numberWithOptions(),
                   ),
                   const SizedBox(height: 16),
                   // DropdownWidget(onValueChanged: handleValueChanged),

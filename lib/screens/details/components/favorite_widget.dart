@@ -12,7 +12,7 @@ class FavScreen extends ConsumerWidget {
     if (cartItems.isEmpty) {
       return Scaffold(
         appBar: AppBar(
-          title: Text('Cart'),
+          title: Text('Favorite'),
         ),
         body: const Center(
           child: Text('Your favorite is empty.'),

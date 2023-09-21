@@ -7,13 +7,15 @@ import '../../../constants/constants.dart';
 import '../../dress/screen/dress_page.dart';
 
 class Categories extends ConsumerStatefulWidget {
+  const Categories({super.key});
+
   @override
   ConsumerState<Categories> createState() => _CategoriesState();
 }
 
 class _CategoriesState extends ConsumerState<Categories> {
   Color selectedColor = kTextLightColor;
-  Widget _selectedWidget = HandbagPage();
+  Widget _selectedWidget = const HandbagPage();
   var slectedText = 'hand bag';
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class _CategoriesState extends ConsumerState<Categories> {
                       onPressed: () {
                         setState(() {
                           selectedColor = kTextColor;
-                          _selectedWidget = HandbagPage();
+                          _selectedWidget = const HandbagPage();
                           slectedText = 'hand bag';
                         });
                       },
@@ -51,7 +53,7 @@ class _CategoriesState extends ConsumerState<Categories> {
                       onPressed: () {
                         setState(() {
                           selectedColor = kTextColor;
-                          _selectedWidget = Dresspage();
+                          _selectedWidget = const Dresspage();
                           slectedText = 'dress';
                         });
                       },
@@ -69,7 +71,7 @@ class _CategoriesState extends ConsumerState<Categories> {
                       onPressed: () {
                         setState(() {
                           selectedColor = kTextColor;
-                          _selectedWidget = ShoesPage();
+                          _selectedWidget = const ShoesPage();
                           slectedText = 'shoes';
                         });
                       },
@@ -85,7 +87,7 @@ class _CategoriesState extends ConsumerState<Categories> {
                     ),
                   ],
                 )),
-            Container(height: size.height * 0.75, child: _selectedWidget),
+            SizedBox(height: size.height * 0.75, child: _selectedWidget),
           ],
         ),
       ),
